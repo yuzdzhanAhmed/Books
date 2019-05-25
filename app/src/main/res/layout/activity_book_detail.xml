@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Book"
+            type="com.booksearch.Book" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.booksearch.BookDetail">
+
+            <ImageView
+                android:id="@+id/imageUrl"
+                android:layout_width="143dp"
+                android:layout_height="155dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:imageUrl="@{Book.thumbnail}"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+                app:srcCompat="@drawable/book_open" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="@dimen/standar_margine"
+                android:text="@{Book.title}"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="350dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{Book.subTitle}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/authors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{Book.authors}"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintRight_toRightOf="@+id/imageUrl"
+                app:layout_constraintStart_toEndOf="@+id/imageUrl"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
+
+            <TextView
+                android:id="@+id/publisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{Book.publisher}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageUrl"
+                app:layout_constraintTop_toBottomOf="@+id/authors" />
+
+            <TextView
+                android:id="@+id/publishDate"
+                android:layout_width="0dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{Book.publishData}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintRight_toRightOf="@+id/imageUrl"
+                app:layout_constraintStart_toEndOf="@+id/imageUrl"
+                app:layout_constraintTop_toBottomOf="@+id/publisher" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="@dimen/standar_margine"
+                android:layout_marginRight="@dimen/standar_margine"
+                android:text="@{Book.description}"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageUrl"
+                app:layout_goneMarginLeft="@dimen/standar_margine" />
+
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>
